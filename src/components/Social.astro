@@ -1,0 +1,15 @@
+---
+import type { CollectionEntry } from "astro:content";
+// TODO: Fix icons
+import { Github } from "lucide-astro";
+
+interface Props {
+  social: CollectionEntry<"social">;
+}
+
+const { social } = Astro.props;
+---
+
+<a href={social.data.url}>
+  <Github/>
+</a>

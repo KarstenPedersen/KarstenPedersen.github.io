@@ -1,4 +1,7 @@
 ---
+import "$lib/styles/app.css";
+import { ModeWatcher } from "mode-watcher";
+
 interface Props {
   title: string;
 }
@@ -42,5 +45,6 @@ const { title } = Astro.props;
   </head>
   <body>
     <slot />
+    <ModeWatcher />
   </body>
 </html>
