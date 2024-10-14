@@ -21,7 +21,8 @@
 				"biomejs.biome",
 				"astro-build.astro-vscode",
 				"svelte.svelte-vscode",
-				"bradlc.vscode-tailwindcss"
+				"bradlc.vscode-tailwindcss",
+				"github.vscode-github-actions"
 			]
 		}
 	},
