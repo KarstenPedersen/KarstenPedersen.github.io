@@ -19,6 +19,7 @@
           nodejs
           vscode-langservers-extracted
           vscode-extensions.astro-build.astro-vscode
+          biome
         ];
       };
     }
