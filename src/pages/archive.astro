@@ -1,0 +1,21 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from "$lib/layouts/Layout.astro";
+import PostCard from "$lib/components/posts/PostCard.svelte";
+
+// TODO: Only get latest
+const posts = await getCollection('posts');
+---
+
+<Layout>
+  <div class="typography">
+    <section>
+      <h1>Archive</h1>
+      <div>
+        {posts.map((post) => (
+          <PostCard id={post.id} title={post.data.title} description={post.data.description} />
+        ))}
+      </div>
+    </section>
+  </div>
+</Layout>

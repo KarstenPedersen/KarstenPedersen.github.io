@@ -1,0 +1,11 @@
+---
+import BaseLayout from "$lib/layouts/BaseLayout.astro";
+import Header from "$lib/components/navigation/Header.svelte";
+---
+
+<BaseLayout>
+	<Header client:load />
+	<main id="main" class="content-grid mt-8 sm:mt-10 md:mt-14">
+		<slot />
+	</main>
+</BaseLayout>

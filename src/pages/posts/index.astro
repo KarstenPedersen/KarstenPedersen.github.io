@@ -1,0 +1,19 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from "$lib/layouts/Layout.astro";
+import PostCard from "$lib/components/posts/PostCard.svelte";
+
+const posts = await getCollection('posts');
+---
+
+<Layout>
+  <section>
+    <h1>Posts</h1>
+    <div>
+      {posts.map((post) => (
+        <PostCard title={post.title} description={post.description} />
+      ))}
+    </div>
+  </section>
+</Layout>
+

@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from "$lib/layouts/Layout.astro";
+import Tag from "$lib/components/posts/Tag.svelte";
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map(post => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout>
+  <div class="typography">
+    <h1>{post.data.title}</h1>
+    <Content />
+    {post.data.tags && post.data.tags.map((tag) => (
+      <Tag tag={tag} />
+    ))}
+  </div>
+</Layout>
